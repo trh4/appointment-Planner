@@ -28,7 +28,7 @@ function App() {
             'phone':phone,
             'email':email,
         });
-
+        setcontacts(newcontacts);
     };
     const addAppointment = (title, contact, date, time) => {
         let newappointments = [...appointments];

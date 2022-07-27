@@ -13,18 +13,18 @@ export const ContactsPage = ({ contacts, addContact }) => {
     const [email, setemail] = useState("");
     const [duplicate, setduplicate] = useState(false);
     let c = [
-        '{ name: "aa", phone: "bb", email: "ee" }',
-        '{ name: "aa2", phone: "bb2", email: "ee2" }',
+        { name: "aa", phone: "bb", email: "ee" },
+        { name: "aa2", phone: "bb2", email: "ee2" },
     ];
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setname(e.target.name.value);
         if (duplicate === false && name) {
             addContact(name, phone, email);
             e.target.name.value = "";
             e.target.phone.value = "";
             e.target.email.value = "";
+            console.log(contacts)
         }
     };
     useEffect(() => {
@@ -58,7 +58,7 @@ export const ContactsPage = ({ contacts, addContact }) => {
             <hr />
             <section>
                 <h2>Contacts</h2>
-                <TileList arr={c} />
+                <TileList arrOfData={contacts} />
             </section>
         </div>
     );

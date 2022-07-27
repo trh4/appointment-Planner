@@ -1,11 +1,16 @@
 import React from "react";
+import { Tile } from "../tile/Tile.js";
 
-export const TileList = (arr) => {
+export const TileList = ({ arrOfData }) => {
+    // const objToLI = (obj) => {
+    //     return Object.keys(obj).map((key) =>
+    //     `${key}:${obj[key]} `);
+    // };
     return (
         <div>
-            <ul>
-                <li>{arr[0]}</li>
-            </ul>
+            {arrOfData.map((obj) => {
+                return <Tile obj={obj}  />;
+            })}
         </div>
     );
 };
