@@ -34,6 +34,7 @@ export const AppointmentForm = ({
                 placeholder="Enter title"
                 onChange={({ target }) => setTitle(target.value)}
             ></input>
+            <ContactPicker contacts={contacts} handleChange={handleContactChange} />
             <label for="date">date</label>
             <input
                 id="date"
@@ -51,7 +52,6 @@ export const AppointmentForm = ({
                 placeholder="Enter time"
                 onChange={({ target }) => setTime(target.value)}
             ></input>
-            <ContactPicker contacts={contacts} handleChange={handleContactChange} />
             <button type="submit">Submit</button>
         </form>
     );
